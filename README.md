@@ -17,6 +17,14 @@ This dashboard utilizes a dataset of meteorite landings publicly available from 
 
 ---
 
+## Dashboard Preview
+
+| Start Page | Overview Page | Mass & Class Page |
+|------------|----------------|--------------------|
+| ![Start](./Dashboard%20Pages/Start_Page.png) | ![Overview](./Dashboard%20Pages/Overview.png) | ![Mass & Class](./Dashboard%20Pages/Mass_and_Class_Analysis.png) |
+
+---
+
 ## Dashboard Structure
 
 The report is divided into **2 main pages**, with an optional **Start Page** for navigation:
@@ -26,7 +34,6 @@ The report is divided into **2 main pages**, with an optional **Start Page** for
 - Summary of available pages
 - Navigation buttons to each dashboard section
 
----
 
 ### 📄 **Page 1 – Overview**
 Explore large-scale patterns in meteorite landings.
@@ -38,17 +45,18 @@ Explore large-scale patterns in meteorite landings.
 - Pie chart of mass categories (Small, Medium, Large)
 - Line chart of yearly landing trends and total mass
 
----
 
 ### 📄 **Page 2 – Mass & Classification Details**
 Dive into the physical and scientific attributes of meteors.
 
 **Visualizations:**
-- Top 10 meteorites by mass (table & map)
+- Top meteorites by mass (table & map)
 - Treemap of meteorite classifications (`recclass`)
-- Location-based map with marker size by mass
+- Location-based map of Top 10 largest meteorites
 
 ---
+
+
 
 ## Data Source
 
@@ -63,28 +71,30 @@ Dive into the physical and scientific attributes of meteors.
 
 Custom calculated columns and measures were created to enrich the analysis:
 
-- `MassCategory`: Categorizes meteorites as Small, Medium, or Large based on tonnage.
-- `EnYogunYarimkure`: Classifies hemisphere based on latitude.
-- `Decade`: Converts year into decade bins for temporal grouping.
-- `FixedLat`, `FixedLong`: Ensures numeric conversion of coordinates for mapping.
-- `TotalMass`, `AverageMass`, `LargestMass`: Aggregated metrics for visuals and KPIs.
+| **Table**        | **DAX Column**         | **Description**                                                                 |
+|------------------|------------------------|----------------------------------------------------------------------------------|
+| `MassTable`      | `mass_ton`             | Converts mass from grams to tons for consistent scaling.                        |
+| `MassTable`      | `MassCategory`         | Categorizes each meteorite as "Small", "Medium", or "Large" by tonnage.         |
+| `LocationTable`  | `FixedLat`             | Parses latitude (`reclat`) into numeric format for accurate mapping.            |
+| `LocationTable`  | `FixedLong`            | Parses longitude (`reclong`) into numeric format for accurate mapping.          |
+| `LocationTable`  | `GeoLocation`          | Combines latitude and longitude into a readable coordinate string.              |
+| `LocationTable`  | `MostLandingsHemisphere`     | Identifies the dominant hemisphere based on landing distribution.               |
+| `LocationTable`  | `Hemisphere`           | Classifies each record as "Northern" or "Southern" based on latitude.           |
+| `TimeTable`      | `Decade`               | Groups meteorite years into decades for clearer timeline visualizations.        |
+
 
 ---
 
-## Navigation
-
-The dashboard includes navigation buttons allowing users to move between pages. Each page has a short description, allowing even non-technical users to understand the purpose and interact with the visuals effectively.
-
----
-
-## 📷 Preview
-
-| Start Page | Overview Page | Mass & Class Page |
-|------------|----------------|--------------------|
-| ![](./Screenshots/StartPage.png) | ![](./Screenshots/Page1_Overview.png) | ![](./Screenshots/Page2_MassClass.png) |
-
----
 
 ## 📁 File Structure
 
-
+NASA-Meteorite-Landings-Power-Bi-Dashboard  
+├── 📁 Dashboard Pages  
+│    ├── Start_Page.png  
+│    ├── Overview.png  
+│    └── Mass_and_Class_Analysis.png  
+├── 📁 MSSQL Data Cleaning  
+│    └── Data_Cleaning_Nasa_Meteorite.sql   
+├── 📁 PowerBi  
+│    └── Final_Project_PowerBi_Nasa_Meteorite.pbix  
+└── README.md  

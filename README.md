@@ -19,6 +19,9 @@ This dashboard utilizes a dataset of meteorite landings publicly available from 
 
 ## Dashboard Preview
 
+🔗 Dashboard: [Nasa Meteorite Landings Power Bi Dashboard](https://app.powerbi.com/reportEmbed?reportId=0f0f41bd-925b-436c-a36b-e4c30f91f2d1)
+
+
 | Start Page | Overview Page | Mass & Class Page |
 |------------|----------------|--------------------|
 | ![Start](./Dashboard%20Pages/Start_Page.png) | ![Overview](./Dashboard%20Pages/Overview.png) | ![Mass & Class](./Dashboard%20Pages/Mass_and_Class_Analysis.png) |

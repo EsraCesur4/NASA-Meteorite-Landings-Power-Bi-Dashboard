@@ -77,7 +77,6 @@ Custom calculated columns and measures were created to enrich the analysis:
 | `MassTable`      | `MassCategory`         | Categorizes each meteorite as "Small", "Medium", or "Large" by tonnage.         |
 | `LocationTable`  | `FixedLat`             | Parses latitude (`reclat`) into numeric format for accurate mapping.            |
 | `LocationTable`  | `FixedLong`            | Parses longitude (`reclong`) into numeric format for accurate mapping.          |
-| `LocationTable`  | `GeoLocation`          | Combines latitude and longitude into a readable coordinate string.              |
 | `LocationTable`  | `MostLandingsHemisphere`     | Identifies the dominant hemisphere based on landing distribution.               |
 | `LocationTable`  | `Hemisphere`           | Classifies each record as "Northern" or "Southern" based on latitude.           |
 | `TimeTable`      | `Decade`               | Groups meteorite years into decades for clearer timeline visualizations.        |
